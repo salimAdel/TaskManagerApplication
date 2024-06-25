@@ -1,0 +1,232 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Admin\Data\**" />
+    <Content Remove="Areas\Admin\Data\**" />
+    <EmbeddedResource Remove="Areas\Admin\Data\**" />
+    <None Remove="Areas\Admin\Data\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\uploads\222.png" />
+    <Content Remove="wwwroot\uploads\lady.jpg" />
+    <Content Remove="wwwroot\uploads\ثقافة اسلامية.xlsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\dashboard\Controllers\" />
+    <Folder Include="Areas\dashboard\Views\" />
+    <Folder Include="wwwroot\uploads\Excell\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Admin\Views\Priviliges\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Priviliges\Update.cshtml" />
+    <None Include="Areas\Admin\Views\Role\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Role\Update.cshtml" />
+    <None Include="Areas\Admin\Views\User\Index.cshtml" />
+    <None Include="Areas\Admin\Views\User\Update.cshtml" />
+    <None Include="Areas\Admin\Views\User\UserPrivilies.cshtml" />
+    <None Include="Areas\Admin\Views\User\UserProfile.cshtml" />
+    <None Include="wwwroot\assets\app-icons\شعار النهى بني.svg" />
+    <None Include="wwwroot\assets\icons\icons.woff2%4029da402db6a4645f2ed69d761c35b60e" />
+    <None Include="wwwroot\assets\img\landing\business-consulting\clients\01-dark.svg" />
+    <None Include="wwwroot\assets\img\landing\business-consulting\clients\01-light.svg" />
+    <None Include="wwwroot\assets\img\landing\business-consulting\clients\02-dark.svg" />
+    <None Include="wwwroot\assets\img\landing\business-consulting\clients\02-light.svg" />
+    <None Include="wwwroot\assets\img\landing\business-consulting\clients\03-dark.svg" />
+    <None Include="wwwroot\assets\img\landing\business-consulting\clients\03-light.svg" />
+    <None Include="wwwroot\assets\img\landing\business-consulting\clients\04-dark.svg" />
+    <None Include="wwwroot\assets\img\landing\business-consulting\clients\04-light.svg" />
+    <None Include="wwwroot\assets\img\landing\business-consulting\clients\05-dark.svg" />
+    <None Include="wwwroot\assets\img\landing\business-consulting\clients\05-light.svg" />
+    <None Include="wwwroot\assets\img\landing\business-consulting\clients\06-dark.svg" />
+    <None Include="wwwroot\assets\img\landing\business-consulting\clients\06-light.svg" />
+    <None Include="wwwroot\assets\img\market\appstore-dark.svg" />
+    <None Include="wwwroot\assets\img\market\appstore-light.svg" />
+    <None Include="wwwroot\assets\img\market\googleplay-dark.svg" />
+    <None Include="wwwroot\assets\img\market\googleplay-light.svg" />
+    <None Include="wwwroot\assets\js\theme-switcher.js" />
+    <None Include="wwwroot\assets\js\theme.min.js" />
+    <None Include="wwwroot\assets\vendor\%40fullcalendar\bootstrap5\index.global.min.js" />
+    <None Include="wwwroot\assets\vendor\%40fullcalendar\core\index.global.min.js" />
+    <None Include="wwwroot\assets\vendor\%40fullcalendar\daygrid\index.global.min.js" />
+    <None Include="wwwroot\assets\vendor\%40fullcalendar\list\index.global.min.js" />
+    <None Include="wwwroot\assets\vendor\%40fullcalendar\timegrid\index.global.min.js" />
+    <None Include="wwwroot\assets\vendor\%40lottiefiles\lottie-player\dist\lottie-player.js" />
+    <None Include="wwwroot\assets\vendor\aos\dist\aos.js" />
+    <None Include="wwwroot\assets\vendor\chart.js\dist\chart.umd.js" />
+    <None Include="wwwroot\assets\vendor\cleave.js\dist\cleave.min.js" />
+    <None Include="wwwroot\assets\vendor\flatpickr\dist\flatpickr.min.js" />
+    <None Include="wwwroot\assets\vendor\flatpickr\dist\plugins\rangePlugin.js" />
+    <None Include="wwwroot\assets\vendor\glightbox\js\glightbox.min.js" />
+    <None Include="wwwroot\assets\vendor\imagesloaded\imagesloaded.pkgd.min.js" />
+    <None Include="wwwroot\assets\vendor\img-comparison-slider\dist\index.js" />
+    <None Include="wwwroot\assets\vendor\jarallax\dist\jarallax.min.js" />
+    <None Include="wwwroot\assets\vendor\leaflet\dist\leaflet.js" />
+    <None Include="wwwroot\assets\vendor\lightgallery\fonts\lg.svg%40io9a6k" />
+    <None Include="wwwroot\assets\vendor\lightgallery\fonts\lg.ttf%40io9a6k" />
+    <None Include="wwwroot\assets\vendor\lightgallery\fonts\lg.woff%40io9a6k" />
+    <None Include="wwwroot\assets\vendor\lightgallery\fonts\lg.woff2%40io9a6k" />
+    <None Include="wwwroot\assets\vendor\lightgallery\lightgallery.min.js" />
+    <None Include="wwwroot\assets\vendor\lightgallery\plugins\fullscreen\lg-fullscreen.min.js" />
+    <None Include="wwwroot\assets\vendor\lightgallery\plugins\thumbnail\lg-thumbnail.min.js" />
+    <None Include="wwwroot\assets\vendor\lightgallery\plugins\video\lg-video.min.js" />
+    <None Include="wwwroot\assets\vendor\lightgallery\plugins\zoom\lg-zoom.min.js" />
+    <None Include="wwwroot\assets\vendor\nouislider\dist\nouislider.min.js" />
+    <None Include="wwwroot\assets\vendor\parallax-js\dist\parallax.min.js" />
+    <None Include="wwwroot\assets\vendor\prismjs\components\prism-clike.min.js" />
+    <None Include="wwwroot\assets\vendor\prismjs\components\prism-core.min.js" />
+    <None Include="wwwroot\assets\vendor\prismjs\components\prism-javascript.min.js" />
+    <None Include="wwwroot\assets\vendor\prismjs\components\prism-markup.min.js" />
+    <None Include="wwwroot\assets\vendor\prismjs\plugins\copy-to-clipboard\prism-copy-to-clipboard.min.js" />
+    <None Include="wwwroot\assets\vendor\prismjs\plugins\line-numbers\prism-line-numbers.min.js" />
+    <None Include="wwwroot\assets\vendor\prismjs\plugins\toolbar\prism-toolbar.min.js" />
+    <None Include="wwwroot\assets\vendor\shufflejs\dist\shuffle.min.js" />
+    <None Include="wwwroot\assets\vendor\simplebar\dist\simplebar.min.js" />
+    <None Include="wwwroot\assets\vendor\swiper\swiper-bundle.min.js" />
+    <None Include="wwwroot\assets\vendor\timezz\dist\timezz.js" />
+    <None Include="wwwroot\stimulasoft\Report\Report.mrt" />
+    <None Include="wwwroot\stimulasoft\Report\Subject_test.mrt" />
+    <None Include="wwwroot\Theme\card-content\debug.log" />
+    <None Include="wwwroot\Theme\card-content\jquery-1.10.2.min.js" />
+    <None Include="wwwroot\Theme\card-content\jquery.PrintArea.js" />
+    <None Include="wwwroot\Theme\card-content\zoompanzoom.js" />
+    <None Include="wwwroot\Theme\fonts\feather\fonts\feather.svg" />
+    <None Include="wwwroot\Theme\images\brand\3dsmax-logo.svg" />
+    <None Include="wwwroot\Theme\images\brand\dropbox-logo.svg" />
+    <None Include="wwwroot\Theme\images\brand\github-logo.svg" />
+    <None Include="wwwroot\Theme\images\brand\google-drive.svg" />
+    <None Include="wwwroot\Theme\images\brand\gray-logo-airbnb.svg" />
+    <None Include="wwwroot\Theme\images\brand\gray-logo-digitalocean.svg" />
+    <None Include="wwwroot\Theme\images\brand\gray-logo-discord.svg" />
+    <None Include="wwwroot\Theme\images\brand\gray-logo-intercom.svg" />
+    <None Include="wwwroot\Theme\images\brand\gray-logo-netflix.svg" />
+    <None Include="wwwroot\Theme\images\brand\gray-logo-pinterest.svg" />
+    <None Include="wwwroot\Theme\images\brand\gray-logo-stripe.svg" />
+    <None Include="wwwroot\Theme\images\brand\hubspot.svg" />
+    <None Include="wwwroot\Theme\images\brand\instagram.svg" />
+    <None Include="wwwroot\Theme\images\brand\logo\logo-icon.svg" />
+    <None Include="wwwroot\Theme\images\brand\logo\logo-inverse.svg" />
+    <None Include="wwwroot\Theme\images\brand\logo\logo.svg" />
+    <None Include="wwwroot\Theme\images\brand\netflix.svg" />
+    <None Include="wwwroot\Theme\images\brand\payoneer.svg" />
+    <None Include="wwwroot\Theme\images\brand\paypal-small.svg" />
+    <None Include="wwwroot\Theme\images\brand\paypal.svg" />
+    <None Include="wwwroot\Theme\images\brand\pinterest.svg" />
+    <None Include="wwwroot\Theme\images\brand\slack-logo.svg" />
+    <None Include="wwwroot\Theme\images\brand\stripe.svg" />
+    <None Include="wwwroot\Theme\images\brand\xbox.svg" />
+    <None Include="wwwroot\Theme\images\brand\zapier.svg" />
+    <None Include="wwwroot\Theme\images\svg\moon.svg" />
+    <None Include="wwwroot\Theme\images\svg\sun.svg" />
+    <None Include="wwwroot\Theme\js\theme.min.js" />
+    <None Include="wwwroot\Theme\js\vendors\beStepper.js" />
+    <None Include="wwwroot\Theme\js\vendors\calendar.js" />
+    <None Include="wwwroot\Theme\js\vendors\carousel.js" />
+    <None Include="wwwroot\Theme\js\vendors\chart.js" />
+    <None Include="wwwroot\Theme\js\vendors\chat.js" />
+    <None Include="wwwroot\Theme\js\vendors\countdown.js" />
+    <None Include="wwwroot\Theme\js\vendors\customDragula.js" />
+    <None Include="wwwroot\Theme\js\vendors\editor.js" />
+    <None Include="wwwroot\Theme\js\vendors\flatpickr.js" />
+    <None Include="wwwroot\Theme\js\vendors\increment-value.js" />
+    <None Include="wwwroot\Theme\js\vendors\inputmask.js" />
+    <None Include="wwwroot\Theme\js\vendors\jquery.downCount.min.js" />
+    <None Include="wwwroot\Theme\js\vendors\popup.js" />
+    <None Include="wwwroot\Theme\js\vendors\pricing.js" />
+    <None Include="wwwroot\Theme\js\vendors\sidebarMenu.js" />
+    <None Include="wwwroot\Theme\js\vendors\tooltip.js" />
+    <None Include="wwwroot\Theme\libs\%40mdi\font\fonts\materialdesignicons-webfont.eot%40" />
+    <None Include="wwwroot\Theme\libs\%40mdi\font\fonts\materialdesignicons-webfont.eot%40v=6.9.96" />
+    <None Include="wwwroot\Theme\libs\%40mdi\font\fonts\materialdesignicons-webfont.ttf%40v=6.9.96" />
+    <None Include="wwwroot\Theme\libs\%40mdi\font\fonts\materialdesignicons-webfont.woff%40v=6.9.96" />
+    <None Include="wwwroot\Theme\libs\%40mdi\font\fonts\materialdesignicons-webfont.woff2%40v=6.9.96" />
+    <None Include="wwwroot\Theme\libs\%40popperjs\core\dist\umd\popper.min.js" />
+    <None Include="wwwroot\Theme\libs\%40yaireo\tagify\dist\tagify.min.js" />
+    <None Include="wwwroot\Theme\libs\apexcharts\dist\apexcharts.min.js" />
+    <None Include="wwwroot\Theme\libs\bootstrap-icons\font\fonts\bootstrap-icons.woff%4048804dbfe98a9c8a08858a0de0b0e3db" />
+    <None Include="wwwroot\Theme\libs\bootstrap-icons\font\fonts\bootstrap-icons.woff2%4048804dbfe98a9c8a08858a0de0b0e3db" />
+    <None Include="wwwroot\Theme\libs\bootstrap-select\dist\js\bootstrap-select.min.js" />
+    <None Include="wwwroot\Theme\libs\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\Theme\libs\bs-stepper\dist\js\bs-stepper.min.js" />
+    <None Include="wwwroot\Theme\libs\datatables.net-bs5\js\dataTables.bootstrap5.min.js" />
+    <None Include="wwwroot\Theme\libs\datatables.net-responsive-bs5\js\responsive.bootstrap5.min.js" />
+    <None Include="wwwroot\Theme\libs\datatables.net-responsive\js\dataTables.responsive.min.js" />
+    <None Include="wwwroot\Theme\libs\datatables.net\js\jquery.dataTables.min.js" />
+    <None Include="wwwroot\Theme\libs\dragula\dist\dragula.min.js" />
+    <None Include="wwwroot\Theme\libs\dropzone\dist\min\dropzone.min.js" />
+    <None Include="wwwroot\Theme\libs\file-upload-with-preview\dist\file-upload-with-preview.iife.js" />
+    <None Include="wwwroot\Theme\libs\flatpickr\dist\flatpickr.min.js" />
+    <None Include="wwwroot\Theme\libs\fullcalendar\main.min.js" />
+    <None Include="wwwroot\Theme\libs\glightbox\dist\js\glightbox.min.js" />
+    <None Include="wwwroot\Theme\libs\inputmask\dist\jquery.inputmask.min.js" />
+    <None Include="wwwroot\Theme\libs\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\Theme\libs\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\Theme\libs\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\Theme\libs\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\Theme\libs\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\Theme\libs\jQuery.print\jQuery.print.js" />
+    <None Include="wwwroot\Theme\libs\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\Theme\libs\jsvectormap\dist\js\jsvectormap.min.js" />
+    <None Include="wwwroot\Theme\libs\jsvectormap\dist\maps\world.js" />
+    <None Include="wwwroot\Theme\libs\magnific-popup\dist\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\Theme\libs\nouislider\dist\nouislider.min.js" />
+    <None Include="wwwroot\Theme\libs\odometer\odometer.min.js" />
+    <None Include="wwwroot\Theme\libs\owl.carousel\dist\owl.carousel.min.js" />
+    <None Include="wwwroot\Theme\libs\prismjs\components\prism-scss.min.js" />
+    <None Include="wwwroot\Theme\libs\prismjs\plugins\copy-to-clipboard\prism-copy-to-clipboard.min.js" />
+    <None Include="wwwroot\Theme\libs\prismjs\plugins\toolbar\prism-toolbar.min.js" />
+    <None Include="wwwroot\Theme\libs\prismjs\prism.js" />
+    <None Include="wwwroot\Theme\libs\quill\dist\quill.min.js" />
+    <None Include="wwwroot\Theme\libs\simplebar\dist\simplebar.min.js" />
+    <None Include="wwwroot\Theme\libs\tippy.js\dist\tippy-bundle.umd.min.js" />
+    <None Include="wwwroot\Theme\libs\typed.js\lib\typed.min.js" />
+    <None Include="wwwroot\Theme\libs\wnumb\wNumb.min.js" />
+    <None Include="wwwroot\Theme\libs\_mdi\font\fonts\materialdesignicons-webfont.woff2" />
+    <None Include="wwwroot\Theme\libs\_popperjs\core\dist\umd\popper.min.js" />
+    <None Include="wwwroot\Theme\libs\_yaireo\tagify\dist\tagify.min.js" />
+    <None Include="wwwroot\uploads\222.png" />
+    <None Include="wwwroot\uploads\lady.jpg" />
+    <None Include="wwwroot\uploads\ثقافة اسلامية.xlsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.101.0" />
+    <PackageReference Include="EFCore.NamingConventions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="6.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+    <PackageReference Include="Npgsql" Version="6.0.9" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.8" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\stimulasoft\Report\MonthlySheet.mrt">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

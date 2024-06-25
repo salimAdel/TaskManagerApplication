@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html class="loading" lang="en" data-textdirection="rtl" itemscope itemtype="http://schema.org/Article">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Frest admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Frest admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+
+    <title>Login Page - Frest - Bootstrap HTML admin template</title>
+    <link rel="apple-touch-icon" href="@Url.Content("~/CPTheme/images/ico/apple-icon-120.png")">
+    <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/CPTheme/images/ico/favicon.ico")">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
+
+
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+   
+    <link rel="stylesheet" href="~/CPTheme/bootstrap-extended.css" />
+        <link rel="stylesheet" href="~/CPTheme/colors.css" />
+        <link rel="stylesheet" href="~/CPTheme/vendors/css/vendors-rtl.min.css" />
+        <link rel="stylesheet" href="~/CPTheme/bootstrap.css" />
+        <link rel="stylesheet" href="~/CPTheme/components.css" />
+        <link rel="stylesheet" href="~/CPTheme/css-rtl/themes/dark-layout.css" />
+
+        <link rel="stylesheet" href="~/CPTheme/css-rtl/themes/semi-dark-layout.css" />
+        <link rel="stylesheet" href="~/CPTheme/custom-rtl.css" />
+        <link rel="stylesheet" href="~/CPTheme/css-rtl/core/menu/menu-types/vertical-menu.css" />
+        <link rel="stylesheet" href="~/CPTheme/css-rtl/pages/authentication.css" />
+        <link rel="stylesheet" href="~/CPTheme/style-rtl.css" />
+
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <script>
+        window.onLoadCallback = function () {
+            alert;
+
+        }
+    </script>
+
+    <script>
+        function start() {
+
+            gapi.load('auth2', function () {
+                auth2 = gapi.auth2.init({
+                    client_id: '222062781920-26lc7ucurbhposhn6d7mhioskoe2k8j6.apps.googleusercontent.com',
+                    // Scopes to request in addition to 'profile' and 'email'
+                    //scope: 'additional_scope'
+                });
+            });
+        }
+
+        function signInCallback(authResult) {
+            if (authResult['code']) {
+                console.log(authResult['code']);
+                // Hide the sign-in button now that the user is authorized, for example:
+                $('#signinButton').attr('style', 'display: none');
+
+                // Send the code to the server
+
+            } else {
+                // There was an error.
+            }
+        }
+    </script>
+</head>
+<body class="vertical-layout vertical-menu-modern boxicon-layout no-card-shadow 1-column  navbar-sticky footer-static bg-full-screen-image  blank-page blank-page" data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
+
+    @RenderBody()
+
+
+    <script type="text/javascript" src="~/CPTheme/vendors/js/vendors.min.js"></script>
+    <script type="text/javascript" src="~/CPTheme/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+    <script type="text/javascript" src="~/CPTheme/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+    <script type="text/javascript" src="~/CPTheme/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+    <script type="text/javascript" src="~/CPTheme/js/core/app-menu.js"></script>
+    <script type="text/javascript" src="~/CPTheme/js/core/app.js"></script>
+    <script type="text/javascript" src="~/CPTheme/js/scripts/components.js"></script>
+    <script type="text/javascript" src="~/CPTheme/js/scripts/footer.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

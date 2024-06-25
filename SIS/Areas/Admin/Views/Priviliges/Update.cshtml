@@ -1,0 +1,116 @@
+﻿@model SIS.Models.Privileges
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "معلومات الصلاحيات";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <div class="row ">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <!-- Page header -->
+                        <div class="border-bottom pb-4 mb-4">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="mb-0">
+                                    <h1 class="mb-1 h2 fw-bold">@ViewData["Title"]</h1>
+                                    <!-- Breadcrumb -->
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="@Url.Action("Index","Settings", new{Area="dashboard"})">الإدارة</a></li>
+                                            <li class="breadcrumb-item"><a href="@Url.Action("Index")">الصلاحيات </a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">إضافة/ تعديل</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                                <div>
+                                    <a href="@Url.Action("Index")" class="btn btn-success me-1">رجوع</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+   
+
+<div class="app-content content">
+    <div class="content-area-wrapper">
+        <div class="col-lg-12 col-md-12 col-12">
+            @if (TempData["Success"] != null)
+            {
+                <p class="alert alert-success" id="successMessage">@TempData["Success"]</p>
+            }
+            @if (TempData["error"] != null)
+            {
+                <p class="alert alert-danger" id="successMessage">@TempData["error"]</p>
+            }
+             <div>
+                            <!-- card -->
+                            <div class="card smooth-shadow-md mb-4">
+                                <div class="card-header border-bottom px-4 py-3">
+                                    <h4 class="mb-0"></h4>
+                                </div>
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <form asp-action="Save" asp-controller="Priviliges" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" />
+                            <input type="hidden" asp-for="priv_key" />
+                             <div class="row">
+                                        <!-- input basic -->
+                                        <div class="mb-3 col-md-6">
+                                            <label asp-for="priv_name" class="form-label" for="email"></label>
+                                            <input  class="form-control" asp-for="priv_name" value="@Model.priv_name">
+                                            <span asp-validation-for="priv_name" class="text-danger"></span>
+                                        </div>
+                                        <div class="mb-3 col-md-6">
+                                             <label asp-for="priv_cat" class="form-label" for="email"></label>
+                                            @Html.DropDownList("priv_cat",(SelectList)ViewBag.rolesList,"اختر المجموعة",new{@id="priv_cat",@class="form-select"} )
+                                  
+                                           @*<label asp-for="priv_cat" class="form-label" for="email"></label>
+                                           <input  class="form-control" asp-for="priv_cat" value="@Model.priv_cat">
+                                           <span asp-validation-for="priv_cat" class="text-danger"></span>*@
+                                        </div>
+                                       
+                                        </div>
+                          
+                            <div class="d-flex justify-content-end mt-2">
+                                
+                                <button type="submit" class="btnaddtenant btn btn-success  float-right">
+                                    <span class="icon">
+                                        <i class="fa fa-plus"></i>
+                                    </span> حفظ
+                                </button>
+                            </div>
+                                    </form>
+                                   
+                                   
+                                   
+                                    
+                                       
+                                      
+                                    </div>
+                                   
+                                    
+                                </div>
+                            </div>
+                            </div>
+
+
+
+           
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

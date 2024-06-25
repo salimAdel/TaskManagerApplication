@@ -1,0 +1,166 @@
+﻿@model IEnumerable<SIS.Models.Privileges>
+@using SIS.Helper;
+@using Microsoft.AspNetCore.Identity;
+@inject RoleHelper roleHelper;
+@{
+    ViewData["Title"] = "صلاحيات المستخدمين ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var Role_drop = roleHelper.RenderRolesList();
+}
+ <div class="row ">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <!-- Page header -->
+                        <div class="border-bottom pb-4 mb-4">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="mb-0">
+                                    <h1 class="mb-1 h2 fw-bold">@ViewData["Title"]</h1>
+                                    <!-- Breadcrumb -->
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="@Url.Action("Index","Settings", new{Area="dashboard"})">الإدارة</a></li>
+                                            <li class="breadcrumb-item"><a href="@Url.Action("Index")">بيانات الكلية</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">عرض الكل </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        @if (TempData["Success"] != null)
+            {
+                <p class="alert alert-success" id="successMessage">@TempData["Success"]</p>
+            }
+            @if (TempData["error"] != null)
+            {
+                <p class="alert alert-danger" id="successMessage">@TempData["error"]</p>
+            }
+                        <!-- Card -->
+                        <div class="card smooth-shadow-lg mb-4" >
+                            <!-- Card header -->
+                            <div class="card-header border-bottom">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="mb-0">
+                                        <h3 class="mb-0"> @ViewData["Title"]</h3>
+                                        <span></span>
+                                    </div>
+                                    <div class="col-6 col-lg-3">
+                                         @Html.DropDownList("userRole",(SelectList)Role_drop,"اختر المجموعة",new{@id="userRole",@class="form-select"} )
+                                  
+                                    </div>
+                                    <div>
+                                         <button type="button" class="btn btn-success mt-0 mt-md-3 me-1" onclick="window.location = '@Url.Action("Update")/0'">
+                        <i class="bx bx-plus"></i>
+                        <span>اضافة جديد</span>
+                    </button>
+                                        
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            <!-- Table -->
+                            <div class="table-responsive table-min-height" >
+                                <table class="table mb-0 text-nowrap table-hover table-centered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="checkAll">
+                                                    <label class="form-check-label" for="checkAll"></label>
+                                                </div>
+                                            </th>
+                                            
+                                            <th scope="col">الترتيب</th>
+                                            <th scope="col">الإسم</th>
+                                            <th scope="col">المجموعة</th>
+                                            
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{int num = 0;
+                                        foreach (var item in Model)
+                                        {
+                                            num++;
+                                      <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="categoryCheck1" name="checkbox">
+                                                    <label class="form-check-label" for="categoryCheck1"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h5 class="mb-0">
+                                                   @num
+                                                </h5>
+                                            </td>
+                                            
+                                            <td> @item.priv_name </td>
+                                    <td>@{
+                                            string role = await roleHelper.getRoleName(item.priv_cat);
+                                        } 
+                                        
+                                        @role </td>
+                                            
+                                            <td>
+                                                <span class="dropdown dropstart">
+                                                    <a class="btn-icon btn btn-ghost btn-sm rounded-circle" href="instructor-order.html#" role="button" id="courseDropdown1"
+                                                       data-bs-toggle="dropdown" data-bs-offset="-20,20" aria-expanded="false">
+                                                        <i class="fe fe-more-vertical"></i>
+                                                    </a>
+                                                    <span class="dropdown-menu" aria-labelledby="courseDropdown1">
+                                                        <span class="dropdown-header">الإعدادات </span>
+                                                        <a class="dropdown-item" href="@Url.Action("Update")/@item.Id" title="تعديل" ><i class="fe fe-edit dropdown-item-icon"></i>تعديل</a>
+                                                        <a class="dropdown-item" href="@Url.Action("Delete")?id=@item.Id" title="حذف" ><i class="fe fe-trash dropdown-item-icon"></i>إزالة</a>
+                                                    </span>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                         }}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Card Footer -->
+                            <div class="card-footer">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+           $("#userRole").on('change', function () {
+                window.location.href = "/Admin/Priviliges/?id=" + $(this).val();
+            });
+        });
+        function Do_Delete(url) {
+            if (confirm("هل تود فعلا حذف العنصر المحدد") == true) {
+                $.ajax({
+                    url: url,
+                    method: 'POST',
+                    data: {},
+                    success: function (json) {
+                        console.log(json);
+                        if (json.status == "1") {
+                            window.location.reload();
+                        }
+                        else {
+                            alert(json.message);
+                        }
+                    }
+
+                });
+            }
+        }
+    </script>
+}

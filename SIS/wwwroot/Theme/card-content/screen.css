@@ -1,0 +1,531 @@
+﻿@import url(//fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext,cyrillic,cyrillic-ext,greek,greek-ext,vietnamese);
+
+@font-face {
+    font-family: 'TheSans';
+    src: url('/fonts/the-sans-plain.eot');
+    src: url('/fonts/the-sans-plain.eot') format('embedded-opentype'),url('/fonts/the-sans-plain.woff2') format('woff2'),url('/fonts/the-sans-plain.woff') format('woff'),url('/fonts/the-sans-plain.ttf') format('truetype'),url('/fonts/the-sans-plain.svg#DroidKufiRegular') format('svg');
+}
+@font-face {
+    font-family: 'ManalFont';
+    src: url('/fonts/AH)Manal High.ttf');
+    src: url('/fonts/AH)Manal High.ttf') format('truetype');
+}
+@font-face {
+    font-family: "Sultan Medium";
+    src: url("/fonts/SultanMedium.eot");
+    src: url('/fonts/SultanMedium.eot') format('embedded-opentype'), url("/fonts/SultanMedium.woff2") format("woff2"), url("/fonts/SultanMedium.woff") format("woff"), url("/fonts/SultanMedium.ttf") format("truetype"), url("/fonts/SultanMedium.svg#Sultan Medium") format("svg");
+}
+    body {
+        direction: rtl;
+    }
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Textcenter {
+    text-align: center;
+}
+
+.center-table {
+    margin: 0px auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.font-sm {
+    font-family: 'TheSans';
+    font-size:11px;
+}
+
+.font-manal {
+    font-family: 'ManalFont';
+    font-size: 14px;
+}
+/**--wasatiyah card------------------*/
+.ws-regno {
+    float: right;
+    display: block;
+    position: relative;
+    top: 67px;
+    right: 135px;
+    font-size:11px;
+}
+.img-container{
+    float:left;
+    top:5px;
+    left:2px;
+    position:relative;
+}
+.ws-name {
+    font-family: 'ManalFont';
+    font-size: 11px;
+    font-weight: 600;
+    float: right;
+    padding-top: 16px;
+    width: 200px;
+    padding-right: 50px;
+    color: #000;
+}
+.ws-college {
+    font-family: 'ManalFont';
+    font-size: 11px;
+    font-weight: 600;
+    float: right;
+    padding-top: 8px;
+    
+    padding-right: 50px;
+    color: #000;
+}
+.ws-dept {
+    font-family: 'ManalFont';
+    font-size: 11px;
+    font-weight: 600;
+    float: right;
+    padding-top: 8px;
+    
+    padding-right: 80px;
+    color: #000;
+}
+.ws-level {
+    font-family: 'ManalFont';
+    font-size: 11px;
+    font-weight: 600;
+    float: right;
+    padding-top: 8px;
+    padding-right: 70px;
+    color: #000;
+}
+.ws-nationality {
+    font-family: 'ManalFont';
+    font-size: 11px;
+    font-weight: 600;
+    float: right;
+    padding-top: 8px;
+    padding-right: 110px;
+    color: #000;
+}
+
+.ws-acyear {
+    font-family: 'ManalFont';
+    font-size: 11px;
+    font-weight: 600;
+    float: right;
+    padding-top: 8px;
+    padding-right: 80px;
+    color: #000;
+}
+/**--------------------*/
+.certificate {
+    width: 29.7cm;
+    height: 21.0cm;
+    background-position-y: -15px;
+    background-size: contain;
+}
+.cer_mode2 {
+    
+    background-image: url('/Content/card-content/Certificate_3.jpg');
+    
+}
+.certificate .t-margin7 {
+    margin-top: 100px;
+}
+.certificate .pic-box {
+    position: relative;
+    float: left;
+    top: 70px;
+    left: 70px;
+    
+    width: 2.7cm;
+    height: 3.15cm;
+}
+
+.certificate .cer-line{
+    display:block;
+    padding-top:15px;
+    padding-right:170px;
+}
+.certificate .m-0{margin:0 !important;}
+.certificate .p-0 {
+    padding: 0 !important;
+}
+    .certificate .cer-line .black {
+        color: #000;
+        text-align: center;
+    }
+    .certificate .pt-1 {
+        padding-top: 20px !important;
+    }
+    .certificate .py-1 {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+    .certificate .cer-line p {
+        font-family: 'ManalFont';
+        font-size: 20px;
+        font-weight: normal;
+        color: #1a681c;
+        text-align: right;
+        
+    }
+    .certificate .cer-line .cert-name {
+        font-family: 'ManalFont';
+        font-size: 20px;
+        font-weight: normal;
+        float: right;
+        width: 400px;
+        padding-top:5px;
+        color: #1a681c;
+    }
+    .certificate .cer-line .cer-country {
+        font-family: 'ManalFont';
+        font-size: 20px;
+        font-weight: normal;
+        float: right;
+        padding-top: 5px;
+        width: 200px;
+        padding-right: 230px;
+        color: #1a681c;
+    }
+    /**--------------------*/
+    .tbl-wide {
+        font-size: 10px;
+        font-weight: normal;
+    }
+
+    .tbl-wide td {
+        font-size: 10px;
+        font-weight: normal;
+        padding: 5px;
+        border: solid 1px;
+    }
+
+    .tbl-wide th {
+        font-size: 10px;
+        font-weight: bold;
+        border: solid 1px;
+    }
+    .tbl-wide td.col25, .tbl-wide th.col25 {
+        width: 150px;
+    }
+    .tbl-wide th.w1, .tbl-wide td.w1 {
+        width: 15px;
+        text-align: center
+    }
+
+        .tbl-wide th.w2, .tbl-wide td.w2 {
+            width: auto !important;
+            text-align: center;
+            padding: 5px 15px;
+        }
+.reportHeader-wide {
+    margin: 0px auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 842px;
+    height: 135px;
+    margin-bottom: 0.5cm;
+    position: relative;
+}
+.reportHeader-wide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 842px;
+    height: 136px;
+}
+.BlankreportHeader-wide {
+    margin: 0px auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 842px;
+    height: 60px;
+    margin-bottom: 0.5cm;
+    position: relative;
+}
+.BlankreportHeader-wide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 842px;
+    height: 60px;
+}
+    .reportHeader-wide .reportDate, .BlankreportHeader-wide .reportDate {
+        position: absolute;
+        float: left;
+        left: 45px;
+        top: 15px;
+        position: relative;
+        font-size: 10pt;
+        color: #527114;
+        font-weight: bold;
+    }
+
+.reportHeader-wide p {
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    margin-top: 77px;
+    font-size: 15pt;
+    color: #527114;
+    font-weight: bold;
+    font-family: 'TheSans'
+}
+
+    .reportHeader-wide p i, .BlankreportHeader-wide p i{
+        background-color: #eee;
+        padding: 0px 15px;
+    }
+
+.report-Pre {
+    margin: 0px auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 872px;
+    position: relative;
+}
+.report-Pre p {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    text-align: right;
+    font-size: 13pt;
+    margin:10px auto;
+    color: #000;
+    font-weight: bold;
+    font-family: 'TheSans'
+}
+    .report-Pre p em {
+        padding-right:120px;
+    }
+        .report-Pre p.green {
+        color: #527114;
+    }
+/**--------------------*/
+.reportHeader {
+    margin: 0px auto;
+    margin-left: auto;
+    margin-right: auto;
+    /*background-image: url('rptDwHeader.jpg');*/
+    width: 595px;
+    height: 135px;
+    margin-bottom: 0.5cm;
+    position: relative;
+}
+    .reportHeader img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 595px;
+        height: 135px;
+    }
+   
+    .reportHeader .reportDate {
+        position: absolute;
+        float:left;
+        left: 15px;
+        top: 15px;
+        position: relative;
+        font-size: 10pt;
+        color: #527114;
+        font-weight: bold;
+    }
+    .reportHeader p {
+        width: 100%;
+        margin: auto;
+        position: absolute;
+        text-align: center;
+        margin-top: 77px;
+        font-size: 15pt;
+        color: #527114;
+        font-weight: bold;
+        font-family: 'TheSans'
+    }
+        .reportHeader p i {
+            background-color:#eee;padding:0px 15px;
+        }
+        .printedTable {
+        margin: 0px auto;
+        margin-top: 0.2cm;
+        background-color: #fff;
+        width: 18.0cm;
+        font-size: 14pt;
+        font-weight: bold;
+    }
+    .printedTable table, .printedTableth, .printedTable td, .printedTable th {
+        border: 1px solid;
+    }
+    .printedTable th {
+        background-color: #eee;
+    }
+    .printedTable td, .printedTable th {
+        padding: 5px;
+    }
+.printedTable table caption {
+    font-family: 'TheSans';
+    padding-bottom:5px;
+}
+/**--------------------*/
+.Container:first-child {
+    margin-top: 1cm;
+}
+.Container {
+    margin: 0px auto;
+    margin-top: 0.2cm;
+    background-color: #fff;
+    width: 8.4cm;
+    height: 5.3cm;
+    font-size: 10pt;
+    font-weight: bold;
+    border-radius: 0.2cm;
+    -webkit-box-shadow: 3px 2px 18px -1px rgba(0,0,0,0.5);
+    -moz-box-shadow: 3px 2px 18px -1px rgba(0,0,0,0.5);
+    box-shadow: 3px 2px 18px -1px rgba(0,0,0,0.5);
+}
+
+    #logo {
+        margin-top: 0.06cm;
+        margin-right: 0.04cm;
+        width: 1.4cm;
+        height: 1.3cm;
+        float: right;
+    }
+
+#rightTitle {
+    margin-right: 0.2cm;
+    margin-top: 0.2cm;
+    float: right;
+    width: 6.6cm;
+    font-family: 'TheSans'
+}
+
+    #boldtitle {
+        padding-right: 0.2cm;
+    }
+
+#colortitle {
+    padding: 0.06cm;
+    padding-right: 0.2cm;
+    color: #fff;
+    background-color: #184d2d !important;
+    -webkit-print-color-adjust: exact;
+    font-weight: 700;
+}
+
+    .clr {
+        clear: both;
+    }
+
+    table {
+        margin-right: 0.04cm;
+        margin-top: 0.03cm;
+        empty-cells: show;
+        z-index: 1000;
+    }
+
+.updown {
+    background-color: #184d2d !important;
+    -webkit-print-color-adjust: exact;
+    width: 0.5cm;
+    height: 3.65cm;
+    margin-right: 0.19cm;
+    float: right;
+}
+
+        .updown > span {
+            writing-mode: vertical-lr;
+            color: #fff;
+            margin-top: 1.15cm;
+        }
+
+    #details {
+        float: right;
+        text-align: center;
+        width: 7.5cm;
+        z-index: 10000;
+    }
+
+        #details<span {
+        }
+
+    #backlogo {
+        background-image: url("Dar.png") !important;
+        -webkit-print-color-adjust: exact;
+        position: relative;
+        background-size: 2cm;
+        background-repeat: no-repeat;
+        width: 3cm;
+        height: 2.5cm;
+        top: 0.5cm;
+        right:2cm;
+        opacity: 0.25;
+    }
+
+    #printtoolbar {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+        #printtoolbar * {
+            font-size: 14pt;
+        }
+.titleline1 {
+    width: 5.6cm;
+    right: 0.6cm;
+    border-bottom: 1pt solid darkgray !important;
+    -webkit-print-color-adjust: exact;
+    position: relative;
+}
+.titleline2 {
+    width: 5.6cm;
+    right: 0.6cm;
+    top: 0.02cm;
+    border-bottom: 1pt solid darkgray !important;
+    -webkit-print-color-adjust: exact;
+    position: relative;
+}
+.notetitle{
+    position:relative;
+    right:6.25cm;
+    top:0.28cm;
+}
+.rules{
+    margin-right:-0.45cm;
+}
+.rules ol li{
+    margin-top:0.13cm;
+
+}
+.rules ol li:nth-child(4){
+    margin-top:0.25cm;
+}
+    .rules ol li:nth-child(5) {
+        margin-top: 0.13cm;
+    }
+.hadh{
+    margin:0cm auto;
+    margin-top:-5px;
+    text-align:center;
+    font-size:11pt;
+    width:7.5cm;
+}
+.reg {
+    font-size: 10pt;
+    font-weight:100;
+}
+
+.renew {
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    top: -3.8cm;
+    right: 6cm;
+    width: 2cm;
+    height: 2cm;
+    border-radius: 1.1cm;
+    border: 1pt solid darkgray;
+}
+#renewtext {
+    position:relative;
+    top:0.7cm;
+}

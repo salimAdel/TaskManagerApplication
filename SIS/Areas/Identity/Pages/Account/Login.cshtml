@@ -1,0 +1,109 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+        Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    //Layout = "~/Views/Shared/_CPLoginLayout.cshtml";
+}
+
+<section id="content" class="overflow-hidden py-lg-8 py-6">
+    <div class="container px-4 px-md-5 text-center text-lg-start my-lg-5 my-2">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-7 mb-5" style="z-index: 10">
+          <section class="bg-auto hero-graphics" >
+            <h1 class="display-2 mb-5 fw-bold text-success">
+              <span class="text-dark px-3 px-md-0">نظام شئون الطلاب بجامعة الوسطية الشرعية</span>
+              <span class="headingTyped" style="color: hsl(138, 63%, 56%)"></span>
+            </h1>
+            <p class="mb-4 opacity-70 lead text-dark d-none d-lg-block">
+              النظام الالكتروني لشئون الطلاب يعد أحد الخدمات الالكترونية التي تقدمها الجامعة لطلابها من أجل سهولة الوصول الى المعلومات الضرورية للطلاب خلال دراسته الجامعية بالجامعة والاطلاع على تطور السيرة الأكاديمية حتى التخرج
+            </p>
+          </section>
+        </div>
+  
+        <div class="col-lg-5 mb-5 mb-lg-0">
+  
+          <div class="card bg-glass smooth-shadow-lg">
+            <div class="card-body px-4 my-3 px-md-5">
+              <!-- START login_Form -->
+               
+                                        <form id="login_Form" method="post" class="d-block needs-validation" novalidate >
+                                            @Html.AntiForgeryToken()
+                                             @if (!Html.ViewData.ModelState.IsValid)
+                                            {
+                                             <!-- Validation alert-->
+                <div id="lValidation" class="alert alert-dismissible small" style="--geeks-alert-padding-y: 0.5rem; background-color: #dc4c64; display: none; color: #fff;">
+                  <button type="button" class="btn-close btn-close-white close-alert" style="top: -10px;" aria-label="Close"></button>
+                  <i class="bi bi-exclamation-triangle"></i>&nbsp;البريد أو كلمة المرور خاطئة
+                </div>
+                }
+                                            <div class="form-outline mb-4">
+
+                                                <label class="text-bold-600" for="exampleInputEmail1">البريد الالكتروني</label>
+                                                
+                                                <input asp-for="Input.Email" class="form-control form-control-lg" id="lEmail" required  />
+
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="text-bold-600" for="exampleInputPassword1">كلمة المرور</label>
+                                                
+                                                <input asp-for="Input.Password" class="form-control form-control-lg" id="lPassword" type="password" required />
+                                            </div>
+                                            <div class="form-group d-flex flex-md-row flex-column justify-content-between align-items-center">
+                                                <div class="text-left">
+                                                    <div class="checkbox checkbox-sm">
+                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <label class="checkboxsmall" for="exampleCheck1">
+                                                            <small>
+                                                                البقاء متصلا
+                                                            </small>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right"><a href="auth-forgot-password.html" class="card-link"><small>نسيت كلمة المرور؟</small></a></div>
+                                            </div>
+                                            <div class="form-check form-switch d-flex justify-content-center mb-4">
+                  <input class="form-check-input me-2" id="lCheckBox" name="lCheckBox" type="CheckBox" checked required/>
+                  <label class="form-check-label" for="lCheckBox">
+                    تذكر إعدادات تسجيل الدخول
+                  </label>
+                </div>
+              
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-lg btn-success btn-block b mb-3" >
+                  تسجيل الدخول
+                </button>
+                                            
+                                            </form>
+
+</div>
+
+              <!-- END login_Form -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        $(function () {
+            document.getElementById('lValidation').style.display='block';
+           $("#login_Form").on('submit', function (event) {
+               //event.preventDefault();
+               //document.getElementById('lValidation').style.display='block';
+               $(this).submit();
+            });
+        });
+        
+        
+    </script>
+}

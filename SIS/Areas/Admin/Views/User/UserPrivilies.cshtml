@@ -1,0 +1,187 @@
+﻿@model User
+@using SIS.Data;
+@using SIS.Helper;
+@using Microsoft.AspNetCore.Identity;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@inject RoleHelper roleHelper;
+@inject DBContext db;
+@{
+    ViewData["Title"] = "صلاحيات المستخدمين";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var roleID =await roleHelper.getUserRoleId(Model.Id);
+    var prList = db.Privileges.Where(a => a.priv_cat == roleID).ToList();
+    var Role_drop = roleHelper.RenderRolesList();
+}
+ <div class="row ">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <!-- Page header -->
+                        <div class="border-bottom pb-4 mb-4">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="mb-0">
+                                    <h1 class="mb-1 h2 fw-bold">@ViewData["Title"]</h1>
+                                    <!-- Breadcrumb -->
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="@Url.Action("Index","Settings", new{Area="dashboard"})">الإدارة</a></li>
+                                            <li class="breadcrumb-item"><a href="@Url.Action("Index")">بيانات المستخدمين</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">عرض الكل </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        @if (TempData["Success"] != null)
+            {
+                <p class="alert alert-success" id="successMessage">@TempData["Success"]</p>
+            }
+            @if (TempData["error"] != null)
+            {
+                <p class="alert alert-danger" id="successMessage">@TempData["error"]</p>
+            }
+                        <!-- Card -->
+                        <div class="card smooth-shadow-lg mb-4" >
+                            <!-- Card header -->
+                            <div class="card-header border-bottom">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="mb-0">
+                                        <h3 class="mb-0">صلاحيات المستخدم @Model.FullName  </h3>
+                                        <span></span>
+                                    </div>
+                                    
+                                   
+                                </div>
+                                
+                                
+                            </div>
+                             <form asp-action="SavePrivilges" asp-controller="User" method="post" id="frmAdd">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" name="Id" value="@Model.Id" />
+                            <input type="hidden" name="roleID" value="@roleID" />
+                            <!-- Table -->
+                            <div class="table-responsive table-min-height" >
+                                <table class="table mb-0 text-nowrap table-hover table-centered">
+                                    <thead class="table-light">
+                                        <tr>
+                                           @* <th>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="checkAll">
+                                                    <label class="form-check-label" for="checkAll"></label>
+                                                </div>
+                                            </th>*@
+                                            
+                                            <th scope="col">الترتيب</th>
+                                            <th scope="col">الصلاحية </th>
+                                            <th scope="col">القراءة</th>
+                                            <th scope="col">الاضافة</th>
+                                            <th scope="col">التعديل</th>
+                                            <th scope="col">الحذف</th>
+                                             <th scope="col">الطباعة</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                            @{
+                                int num = 0;
+                                foreach (var item in prList)
+                                {
+                                    var prv = db.Privileges_UserBased.SingleOrDefault(a => a.UserId == Model.Id && a.PrivilegesId == item.Id);
+                                    string p1= (prv!=null&&prv.is_displayed?"checked":"");
+                                    string p2=(prv!=null&&prv.is_insert?"checked":"");
+                                    string p3=(prv != null && prv.is_update ? "checked" : "");
+                                    string p4=(prv != null && prv.is_delete ? "checked" : "");
+                                    string p5=(prv != null && prv.is_print ? "checked" : "");
+                                    num++;
+                                      <tr>
+                                      <td>@num</td>
+                                      <td>@item.priv_name</td>
+                                      <td>
+                                       <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" name="displayCheck" value="@item.Id" @p1 id="displayCheck">
+                                                    <label class="form-check-label" for="displayCheck"></label>
+                                                </div>
+                                      </td>
+                                      <td>
+                                       <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" name="insertCheck" value="@item.Id" @p2 id="insertCheck">
+                                                    <label class="form-check-label" for="insertCheck"></label>
+                                                </div>
+                                      </td>
+                                      <td>
+                                       <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" name="updateCheck" value="@item.Id" @p3 id="updateCheck">
+                                                    <label class="form-check-label" for="updateCheck"></label>
+                                                </div>
+                                      </td>
+                                      <td>
+                                       <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" name="deleteCheck" value="@item.Id" @p4 id="deleteCheck">
+                                                    <label class="form-check-label" for="deleteCheck"></label>
+                                                </div>
+                                      </td>
+                                       <td>
+                                       <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" name="printCheck" value="@item.Id"  @p5 id="printCheck">
+                                                    <label class="form-check-label" for="printCheck"></label>
+                                                </div>
+                                      </td>
+                                      
+                                      </tr>
+                                        }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="d-flex justify-content-end mt-2 p-3">
+                                
+                                <button type="submit" class="btnaddtenant btn btn-success  float-right">
+                                    <span class="icon">
+                                        <i class="fa fa-plus"></i>
+                                    </span> حفظ التعديلات
+                                </button>
+                            </div>
+                            </form>
+                            <!-- Card Footer -->
+                            <div class="card-footer">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+           $("#userRole").on('change', function () {
+                window.location.href = "/Admin/User/?id=" + $(this).val();
+            });
+        });
+        function Do_Delete(url) {
+            if (confirm("هل تود فعلا حذف العنصر المحدد") == true) {
+                $.ajax({
+                    url: url,
+                    method: 'POST',
+                    data: {},
+                    success: function (json) {
+                        console.log(json);
+                        if (json.status == "1") {
+                            window.location.reload();
+                        }
+                        else {
+                            alert(json.message);
+                        }
+                    }
+
+                });
+            }
+        }
+    </script>
+}

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Huseein Bin Yahya">
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="~/Theme/images/favicon/favicon.ico">
+
+    <!-- Libs CSS -->
+    <link href="~/Theme/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="~/Theme/libs/_mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="~/Theme/libs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/Theme/libs/simplebar/dist/simplebar.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="~/Theme/css/theme-rtl.min.css">
+    <style>
+#myVideo {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+}
+#content {
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+    <title>@ViewBag.Title</title>
+</head>
+
+<body class="bg-white position-relative bg-cover min-vh-100">
+    
+    <video id="myVideo" style="min-width: 100%; min-height: 100%; opacity: 0.5;"
+  playsinline autoplay muted loop>
+  <source class="h-100" type="video/mp4"
+      src="~/Theme/Gradient Background.webm"/>
+</video>
+<!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-transparent navbar-default shadow-none ">
+    <div class="container px-0 mt-2">
+      <a href="#" class="d-flex"
+        >
+        
+      </a>
+
+      <div class="ms-auto" id="navbar-default mt-2">
+        <div class="form-check form-switch theme-switch btn btn-light btn-icon rounded-circle me-2 ">
+        </div>
+      </div>
+    </div>
+  </nav>
+  @RenderBody()
+  <!-- START Section: Design Block -->
+  
+
+   
+    
+    
+    <!-- Libs JS -->
+  <script src="~/Theme/libs/typed.js/lib/typed.min.js"></script>
+  <script src="~/Theme/libs/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="~/Theme/libs/jquery/dist/jquery.validate.js"></script>
+  <script src="~/Theme/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="content/js/login.js"></script>
+  <script src="~/Theme/libs/simplebar/dist/simplebar.min.js"></script>
+  
+  
+  <!-- Theme JS -->
+  <script src="~/Theme/js/theme.min.js"></script>
+     @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,357 @@
+﻿@using Microsoft.AspNetCore.Http
+@using SIS.Helper
+@inject IHttpContextAccessor HttpContextAccessor
+@inject RoleHelper Rolehlper
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var user = HttpContextAccessor.HttpContext.User;
+    string uemail = user.Identity.Name;
+    var userInfo=await Rolehlper.getUserInfobyEmail(uemail);
+}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Huseein Bin Yahya">
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="~/Theme/images/favicon/favicon.ico">
+
+    <!-- Libs CSS -->
+    <link href="~/Theme/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="~/Theme/libs/_mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="~/Theme/libs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/Theme/libs/simplebar/dist/simplebar.min.css" rel="stylesheet">
+    <link href="~/Theme/libs/select2-4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="~/Theme/css/theme-rtl.min.css">
+     <link rel="stylesheet" href="~/Theme/css/custome.css">
+    <link href="~/Theme/libs/_yaireo/tagify/dist/tagify.css" rel="stylesheet">
+    <link href="~/Theme/libs/dropzone/dist/dropzone.css" rel="stylesheet" >
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+    
+    <!-- Wrapper -->
+    <div id="db-wrapper">
+
+        <!-- navbar vertical -->
+        <!-- Sidebar -->
+         <partial name="_Menues" />
+       
+        <!-- Page Content -->
+        <main id="page-content-for-mini">
+            
+            <div class="header">
+                <!-- navbar -->
+                <nav class="navbar-default navbar navbar-expand-lg">
+                    <a id="nav-toggle" href="layout-compact.html#">
+                        <i class="fe fe-menu"></i>
+                    </a>
+                    <div class="ms-lg-3 d-none d-md-none d-lg-block">
+                        <!-- Form -->
+                        <form class="d-flex align-items-center">
+                            <span class="position-absolute ps-3 search-icon">
+                                <i class="fe fe-search"></i>
+                            </span>
+                            <input type="search" class="form-control ps-6" placeholder="ابحث عما تريد هنا">
+                        </form>
+                    </div>
+                    <!--Navbar nav -->
+                    <div class="ms-auto d-flex">
+                        <div class="form-check form-switch theme-switch btn btn-light btn-icon rounded-circle ">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                        </div>
+                        <div class="form-check form-switch theme-switch btn btn-light btn-icon rounded-circle ms-2 ">
+                            <a class="btn btn-light btn-icon rounded-circle text-muted" href="layout-compact.html#" data-bs-toggle="fullscreen">
+                                <i class="fe bi-arrows-fullscreen"></i>
+                            </a>
+                        </div>
+                        <ul class="navbar-nav navbar-right-wrap ms-2 d-flex nav-top-wrap">
+                            <li class="dropdown stopevent">
+                                <a class="btn btn-light btn-icon rounded-circle indicator indicator-primary text-muted" href="layout-compact.html#" role="button" id="dropdownNotification" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fe fe-bell"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg" aria-labelledby="dropdownNotification">
+                                    <div>
+                                        <div class="border-bottom px-3 pb-3 d-flex justify-content-between align-items-center">
+                                            <span class="h4 mb-0">الإشعارات</span>
+                                            <a href="layout-compact.html# " class="text-muted">
+                                                <span class="align-middle">
+                                                    <i class="fe fe-settings me-1"></i>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <!-- List group -->
+                                        <ul class="list-group list-group-flush" data-simplebar style="max-height: 300px;">
+                                            @*<li class="list-group-item bg-light">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <a class="text-body" href="layout-compact.html#">
+                                                            <div class="d-flex">
+                                                                <img src="~/Theme/images/avatar/avatar-5.jpg"
+                                                                     alt=""
+                                                                     class="avatar-md rounded-circle">
+                                                                <div class="ms-3">
+                                                                    <h5 class="fw-bold mb-1">د.محمد عبدالقادر العيدروس</h5>
+                                                                    <p class="mb-3">
+                                                                        سيتم الإجتماع صباحا في القاعة الكبرى
+                                                                        وسيتم مناقشة المستجدات
+                                                                    </p>
+                                                                    <span class="fs-6 text-muted">
+                                                                        <span>
+                                                                            <span class="fe fe-thumbs-up text-success me-1"></span>15 قبل ساعتين،
+                                                                        </span>
+                                                                        <span class="ms-1">2:19 PM</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-auto text-center me-2">
+                                                        <a href="layout-compact.html#"
+                                                           class="badge-dot bg-info"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top"
+                                                           title="تم قرأتها">
+                                                        </a>
+                                                        <div>
+                                                            <a href="layout-compact.html#"
+                                                               class="bg-transparent"
+                                                               data-bs-toggle="tooltip"
+                                                               data-bs-placement="top"
+                                                               title="إزالة">
+                                                                <i class="fe fe-x text-muted"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <a class="text-body" href="layout-compact.html#">
+                                                            <div class="d-flex">
+                                                                <img src="~/Theme/images/avatar/avatar-4.jpg"
+                                                                     alt=""
+                                                                     class="avatar-md rounded-circle">
+                                                                <div class="ms-3">
+                                                                    <h5 class="fw-bold mb-1">حسين محمد يحيى</h5>
+                                                                    <p class="mb-3">
+                                                                        سيعقد الاجتماع السنوي لإداري الجامعة
+                                                                        بعد شهر رمضان
+                                                                    </p>
+                                                                    <span class="fs-6 text-muted">
+                                                                        <span>
+                                                                            <span class="fe fe-thumbs-up text-success me-1"></span>15 قبل شهر،
+                                                                        </span>
+                                                                        <span class="ms-1">1:20 PM</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-auto text-center me-2">
+                                                        <a href="layout-compact.html#"
+                                                           class="badge-dot bg-secondary"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top"
+                                                           title="لم يتم قرأتها">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <a class="text-body" href="layout-compact.html#">
+                                                            <div class="d-flex">
+                                                                <img src="~/Theme/images/avatar/avatar-16.jpg"
+                                                                     alt=""
+                                                                     class="avatar-md rounded-circle">
+                                                                <div class="ms-3">
+                                                                    <h5 class="fw-bold mb-1">إدارة الموقع</h5>
+                                                                    <p class="mb-3">
+                                                                        نحن سعداء بوجودك ولا تتردد في طلب المساعدة
+                                                                    </p>
+                                                                    <span class="fs-6 text-muted">
+                                                                        <span>
+                                                                            <span class="fe fe-award text-warning me-1"></span>قبل سنة،
+                                                                        </span>
+                                                                        <span class="ms-1">1:56 PM</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-auto text-center me-2">
+                                                        <a href="layout-compact.html#"
+                                                           class="badge-dot bg-info"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top"
+                                                           title="تم قرأتها">
+                                                        </a>
+                                                        <div>
+                                                            <a href="layout-compact.html#"
+                                                               class="bg-transparent"
+                                                               data-bs-toggle="tooltip"
+                                                               data-bs-placement="top"
+                                                               title="إزالة">
+                                                                <i class="fe fe-x text-muted"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>*@
+                                        </ul>
+                                        <div class="border-top px-3 pt-3 pb-0">
+                                            <a href="#" class="text-link fw-semi-bold">
+                                                لا توجد اشعارات جديدة
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- List -->
+                            <li class="dropdown ms-2">
+                                @{
+                                    string imageUrl =Url.Content("~/Theme/images/avatar/avatar-5.jpg");
+                                    if (userInfo != null && userInfo.UserLogo!=null)
+                                    {
+                                        var base64String = Convert.ToBase64String(userInfo.UserLogo);
+                                        // Generate the data URL for the image
+                                        imageUrl = $"data:image/png;base64,{base64String}";
+                                    }
+                                }
+                                <a class="rounded-circle" href="layout-compact.html#" role="button" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="avatar avatar-md avatar-indicators avatar-online">
+                                        <img alt="avatar" src="@imageUrl" class="rounded-circle">
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
+                                    <div class="dropdown-item">
+                                        <div class="d-flex">
+                                            <div class="avatar avatar-md avatar-indicators avatar-online">
+                                               
+                                                <img alt="avatar" src="@imageUrl" class="rounded-circle">
+                                            </div>
+                                            <div class="ms-3 lh-1">
+                                                <h5 class="mb-1">@(userInfo!=null?userInfo.FullName:"غير مسجل")</h5>
+                                                <p class="mb-0 text-muted">@(userInfo!=null?userInfo.Email:"")</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <ul class="list-unstyled">
+                                       @* <li class="dropdown-submenu dropstart-lg">
+                                            <a class="dropdown-item dropdown-list-group-item dropdown-toggle" href="layout-compact.html#">
+                                                <i class="fe fe-circle me-2"></i> الحالة
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a class="dropdown-item" href="layout-compact.html#">
+                                                        <span class="badge-dot bg-success me-2"></span> متصل
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="layout-compact.html#">
+                                                        <span class="badge-dot bg-secondary me-2"></span> غير متصل
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="layout-compact.html#">
+                                                        <span class="badge-dot bg-warning me-2"></span> بعيد
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="layout-compact.html#">
+                                                        <span class="badge-dot bg-danger me-2"></span> مشغول
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>*@
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("UserProfile","User",new{area="Admin"})">
+                                                <i class="fe fe-user me-2"></i> الملف الشخصي
+                                            </a>
+                                        </li>
+                                        @*<li>
+                                            <a class="dropdown-item" href="../../student-subscriptions.html">
+                                                <i class="fe fe-star me-2"></i> الإنجازات
+                                            </a>
+                                        </li>*@
+                                        <li>
+                                            <a class="dropdown-item" href="layout-compact.html#">
+                                                <i class="fe fe-settings me-2"></i> الإعدادات
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="dropdown-divider"></div>
+                                    @if (User.Identity.IsAuthenticated)
+        {
+            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/" method="post">
+                <ul class="list-unstyled">
+                                        <li>
+                                            <a onclick="$('#logoutForm').submit();" class="nav-link btn btn-link text-dark" class="dropdown-item">
+                                                <i class="fe fe-power me-2"></i> تسجيل الخروج
+                                            </a>
+                                        </li>
+                                    </ul>
+               
+            </form>
+        }
+                                    
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            
+            <!-- Container fluid -->
+            <section class="container-fluid p-4">
+              
+                <!--****************************************************************-->
+                 @RenderBody()
+               
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Scripts -->
+    <script src="~/Theme/libs/_yaireo/tagify/dist/tagify.min.js"></script>
+    <!-- This is for preview upload images -->
+    <script src="~/Theme/libs/file-upload-with-preview/dist/file-upload-with-preview.iife.js"></script>
+
+    <!-- Libs JS -->
+    <script src="~/Theme/libs/jquery/dist/jquery.min.js"></script>
+    <script src="~/Theme/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Theme/libs/simplebar/dist/simplebar.min.js"></script>
+
+
+    <!-- Theme JS -->
+    <script src="~/Theme/js/theme.min.js"></script>
+     <script src="~/Theme/libs/quill/dist/quill.min.js"></script>
+    <script src="~/Theme/js/vendors/editor.js"></script>
+
+    <script src="~/Theme/libs/flatpickr/dist/flatpickr.min.js"></script>
+    <script src="~/Theme/js/vendors/flatpickr.js"></script>
+
+
+    <script src="~/Theme/libs/_popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="~/Theme/libs/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+    <script src="~/Theme/js/vendors/tooltip.js"></script>
+
+     <script src="~/Theme/libs/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+     <script src="~/Theme/libs/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="~/Theme/libs/dropzone/dist/min/dropzone.min.js"></script>
+    
+     @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

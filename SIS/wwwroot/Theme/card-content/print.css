@@ -1,0 +1,268 @@
+﻿@import url(//fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext,cyrillic,cyrillic-ext,greek,greek-ext,vietnamese);
+
+@font-face {
+    font-family: 'TheSans';
+    src: url('/fonts/the-sans-plain.eot');
+    src: url('/fonts/the-sans-plain.eot') format('embedded-opentype'),url('/fonts/the-sans-plain.woff2') format('woff2'),url('/fonts/the-sans-plain.woff') format('woff'),url('/fonts/the-sans-plain.ttf') format('truetype'),url('/fonts/the-sans-plain.svg#DroidKufiRegular') format('svg');
+}
+
+
+@page {
+    size:8.4cm 7.3cm;
+    margin:0.15cm;
+}
+
+    body {
+        direction: rtl;
+    }
+.page-break{
+    display:block;
+    page-break-after: always;
+}
+
+
+/**--wasatiyah card------------------*/
+.ws-regno {
+    float: right;
+    display: block;
+    position: relative;
+    top: 62px;
+    right: 135px;
+    font-size: 11px;
+}
+
+.img-container {
+    float: left;
+    top: 5px;
+    left: 2px;
+    position: relative;
+}
+
+.ws-name {
+    font-family: 'ManalFont';
+    font-size: 11px;
+    font-weight: 600;
+    float: right;
+    padding-top: 11px;
+    width: 200px;
+    padding-right: 50px;
+    color: #000;
+}
+
+.ws-college {
+    font-family: 'ManalFont';
+    font-size: 11px;
+    font-weight: 600;
+    float: right;
+    padding-top: 8px;
+    padding-right: 50px;
+    color: #000;
+}
+
+.ws-dept {
+    font-family: 'ManalFont';
+    font-size: 11px;
+    font-weight: 600;
+    float: right;
+    padding-top: 8px;
+    padding-right: 80px;
+    color: #000;
+}
+
+.ws-level {
+    font-family: 'ManalFont';
+    font-size: 11px;
+    font-weight: 600;
+    float: right;
+    padding-top: 8px;
+    padding-right: 70px;
+    color: #000;
+}
+
+.ws-nationality {
+    font-family: 'ManalFont';
+    font-size: 11px;
+    font-weight: 600;
+    float: right;
+    padding-top: 8px;
+    padding-right: 110px;
+    color: #000;
+}
+
+.ws-acyear {
+    font-family: 'ManalFont';
+    font-size: 11px;
+    font-weight: 600;
+    float: right;
+    padding-top: 8px;
+    padding-right: 80px;
+    color: #000;
+}
+/**--------------------*/
+div.Container:first-child {
+    margin-top:-0.23cm;
+}
+    .Container {
+    margin: 0cm auto;
+    margin-top: 0cm;
+    background-color: #fff;
+    width: 8.4cm;
+    height: 5cm;
+    font-size: 10pt;
+    font-weight: bold;
+    
+}
+
+#logo {
+    margin-top: 0.06cm;
+    margin-right: 0.04cm;
+    width: 1.4cm;
+    height: 1.3cm;
+    float: right;
+}
+
+#rightTitle {
+    margin-right: 0.2cm;
+    margin-top: 0.2cm;
+    float: right;
+    width: 6.6cm;
+    font-family: 'TheSans'
+}
+
+    #boldtitle {
+        padding-right: 0.2cm;
+    }
+
+#colortitle {
+    padding: 0.06cm;
+    padding-right: 0.2cm;
+    color: #fff;
+    background-color: #184d2d !important;
+    -webkit-print-color-adjust: exact;
+    font-weight: 700;
+}
+
+    .clr {
+        clear: both;
+    }
+
+table {
+    margin-right: 0.04cm;
+    margin-top: 0.03cm;
+    empty-cells: show;
+    z-index: 1000;
+    font-family: 'TheSans';
+}
+
+    .updown {
+        background-color: #184d2d !important;
+        -webkit-print-color-adjust: exact;
+        width: 0.5cm;
+        height: 3.65cm;
+        margin-right: 0.19cm;
+        float: right;
+    }
+
+        .updown > span {
+            writing-mode: vertical-lr;
+            color: #fff;
+            margin-top: 1.15cm;
+        }
+
+#details {
+    float: right;
+    text-align: center;
+    width: 7.5cm;
+    
+}
+
+        #details<span {
+        }
+
+    #backlogo {
+        background-image: url("univlogo.png") !important;
+        -webkit-print-color-adjust: exact;
+        position: relative;
+        background-size: 2cm;
+        background-repeat: no-repeat;
+        width: 3cm;
+        height: 2.5cm;
+        top: 0.5cm;
+        right:2cm;
+        opacity: 0.25;
+    }
+
+    #printtoolbar {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+        #printtoolbar * {
+            font-size: 14pt;
+        }
+.titleline1 {
+    width: 5.6cm;
+    right: 0.6cm;
+    border-bottom: 1pt solid darkgray !important;
+    -webkit-print-color-adjust: exact;
+    position: relative;
+}
+
+.titleline2 {
+    width: 5.6cm;
+    right: 0.6cm;
+    top: 0.02cm;
+    border-bottom: 1pt solid darkgray !important;
+    -webkit-print-color-adjust: exact;
+    position: relative;
+}
+
+.notetitle {
+    position: relative;
+    right: 6.25cm;
+    top: 0.28cm;
+}
+
+.rules {
+    margin-right: -0.45cm;
+}
+
+    .rules ol li {
+        margin-top: 0.13cm;
+    }
+
+        .rules ol li:nth-child(4) {
+            margin-top: 0.25cm;
+        }
+        .rules ol li:nth-child(5) {
+            margin-top: 0.13cm;
+        }
+.hadh {
+    margin: 0cm auto;
+    margin-top: -5px;
+    text-align: center;
+    font-size: 11pt;
+    width: 7.5cm;
+}
+
+.reg {
+    font-size: 10pt;
+    font-weight: 100;
+}
+.renew {
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    top: -4cm;
+    right: 6cm;
+    width: 2cm;
+    height: 2cm;
+    border-radius: 1.1cm;
+    border: 1pt solid darkgray;
+    -webkit-print-color-adjust: exact;
+}
+
+#renewtext {
+    position: relative;
+    top: 0.7cm;
+}

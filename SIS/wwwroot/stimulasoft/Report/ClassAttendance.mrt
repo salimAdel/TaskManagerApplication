@@ -1,0 +1,1027 @@
+{
+  "ReportVersion": "2020.2.1",
+  "ReportGuid": "fe38d15747d365c0ddd88a35ec7cd9cb",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "ClassAttendance.mrt",
+  "ReportCreated": "/Date(1688155896000+0300)/",
+  "ReportChanged": "/Date(1688155896000+0300)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "root",
+        "Alias": "root",
+        "Columns": {
+          "0": {
+            "Name": "academicYear",
+            "Index": -1,
+            "NameInSource": "academicYear",
+            "Alias": "academicYear",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "batch",
+            "Index": -1,
+            "NameInSource": "batch",
+            "Alias": "batch",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "college",
+            "Index": -1,
+            "NameInSource": "college",
+            "Alias": "college",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "createdIn",
+            "Index": -1,
+            "NameInSource": "createdIn",
+            "Alias": "createdIn",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "creditHrs",
+            "Index": -1,
+            "NameInSource": "creditHrs",
+            "Alias": "creditHrs",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "department",
+            "Index": -1,
+            "NameInSource": "department",
+            "Alias": "department",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "hours",
+            "Index": -1,
+            "NameInSource": "hours",
+            "Alias": "hours",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "level",
+            "Index": -1,
+            "NameInSource": "level",
+            "Alias": "level",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "semester",
+            "Index": -1,
+            "NameInSource": "semester",
+            "Alias": "semester",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "specialist",
+            "Index": -1,
+            "NameInSource": "specialist",
+            "Alias": "specialist",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "subject",
+            "Index": -1,
+            "NameInSource": "subject",
+            "Alias": "subject",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "teacher",
+            "Index": -1,
+            "NameInSource": "teacher",
+            "Alias": "teacher",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "classInfo.root"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "root3",
+        "Alias": "root3",
+        "Columns": {
+          "0": {
+            "Name": "att1",
+            "Index": -1,
+            "NameInSource": "att1",
+            "Alias": "att1",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "att2",
+            "Index": -1,
+            "NameInSource": "att2",
+            "Alias": "att2",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "name",
+            "Index": -1,
+            "NameInSource": "name",
+            "Alias": "name",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "per1",
+            "Index": -1,
+            "NameInSource": "per1",
+            "Alias": "per1",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "per2",
+            "Index": -1,
+            "NameInSource": "per2",
+            "Alias": "per2",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "regNo",
+            "Index": -1,
+            "NameInSource": "regNo",
+            "Alias": "regNo",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "status",
+            "Index": -1,
+            "NameInSource": "status",
+            "Alias": "status",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "att.root"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiJsonDatabase",
+        "Name": "classInfo",
+        "Alias": "JSON",
+        "PathData": "https://localhost:7153/api/MarkSheet/GetClassInfo/?id=1004"
+      },
+      "1": {
+        "Ident": "StiJsonDatabase",
+        "Name": "att",
+        "Alias": "att",
+        "PathData": "https://localhost:7153/api/AttendanceSheet/GetClassAttendnace/?id=1011"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page1",
+      "Guid": "2bc56d8cb3bde60e7aacb3e757296276",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:Transparent",
+      "Components": {
+        "0": {
+          "Ident": "StiPageHeaderBand",
+          "Name": "PageHeaderBand1",
+          "ClientRectangle": "0,0.4,19,5",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "Guid": "7a91d5420ac7fb71a62f16c51a9d9b46",
+              "ClientRectangle": "3.6,1.8,12.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root.college}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "642f8bb206d7bd8859513ca2ff84137c",
+              "ClientRectangle": "16.2,1.8,2.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "الكلية"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:216,216,216",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "Guid": "c1893a206815af3e23ae6dd12971f93f",
+              "ClientRectangle": "11.4,2.4,4.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root.department}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text7",
+              "Guid": "dc06466c9602aff433977a44026090c3",
+              "ClientRectangle": "16.2,2.4,2.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "القسم"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:216,216,216",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text10",
+              "Guid": "f5fb2f638806f0ac33bcf90456f1a49d",
+              "ClientRectangle": "9,2.4,2.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "التخصص"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:216,216,216",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text12",
+              "Guid": "1830335620f9af90795f70e1f3985c0d",
+              "ClientRectangle": "3.8,2.4,2.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "المستوى"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:216,216,216",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text15",
+              "Guid": "430efc3152d3129c7ba0349f04de2ee8",
+              "CanGrow": true,
+              "ClientRectangle": "6,2.4,3,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root.specialist}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text16",
+              "Guid": "46be56110f373ea37dab71e3197ac68b",
+              "ClientRectangle": "0.6,2.4,3,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root.level}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0"
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "Text4",
+              "Guid": "404e3f1d2204f4d02f2c64ad74ba738c",
+              "ClientRectangle": "11.4,3,4.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root.subject}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0"
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "49594f637872d29e2c00d8ce423506a2",
+              "ClientRectangle": "11.4,3.6,4.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root.teacher}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0"
+            },
+            "10": {
+              "Ident": "StiText",
+              "Name": "Text8",
+              "Guid": "a683cc7203e52c9801bd69f2ba48c055",
+              "ClientRectangle": "16.2,3,2.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "المقرر الدراسي"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:216,216,216",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "11": {
+              "Ident": "StiText",
+              "Name": "Text9",
+              "Guid": "fa85bda334f1c7df3c0d7e3d8dba839b",
+              "ClientRectangle": "16.2,3.6,2.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "مدرس المادة"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:216,216,216",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "12": {
+              "Ident": "StiText",
+              "Name": "Text11",
+              "Guid": "e9a2ae68afc4e8803627eca741b535fe",
+              "ClientRectangle": "9,3,2.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "عدد الساعات"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:216,216,216",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "13": {
+              "Ident": "StiText",
+              "Name": "Text13",
+              "Guid": "ed32afd5f1d9cc06d4f412ad1b170462",
+              "ClientRectangle": "3.8,3,2.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "الفصل الدراسي"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:216,216,216",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "14": {
+              "Ident": "StiText",
+              "Name": "Text14",
+              "Guid": "2a08a9361fc51113deb2a635512e0591",
+              "ClientRectangle": "9.2,3.6,2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root.creditHrs}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0"
+            },
+            "15": {
+              "Ident": "StiText",
+              "Name": "Text17",
+              "Guid": "9269c920823c8bbd55812430673daca6",
+              "ClientRectangle": "6,3,3,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "الساعات الفعلية"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:216,216,216",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "16": {
+              "Ident": "StiText",
+              "Name": "Text18",
+              "Guid": "f0ed475f86a6abdc2873ee53c6e17d2c",
+              "ClientRectangle": "0.4,3,3.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "العام الجامعي"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:216,216,216",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "17": {
+              "Ident": "StiText",
+              "Name": "Text19",
+              "Guid": "ab4d7ceb8837740cd277e19c5e659d2f",
+              "ClientRectangle": "0.6,3.6,3,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root.academicYear}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "DataColumn"
+            },
+            "18": {
+              "Ident": "StiText",
+              "Name": "Text20",
+              "Guid": "5bf0358a28a699417e3206397aa5c0a7",
+              "ClientRectangle": "6,3.6,3,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root.hours}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "DataColumn"
+            },
+            "19": {
+              "Ident": "StiText",
+              "Name": "Text21",
+              "Guid": "ac907241aba8242986393d9b8663a530",
+              "ClientRectangle": "3.8,3.6,2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root.semester}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;12;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "DataColumn"
+            },
+            "20": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "45cf8e88447c565db6a04e6a88fc7d5c",
+              "ClientRectangle": "0.4,0.4,18,1.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "كشف خلاصة ساعات التحضير لمقرردراسي"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";14;Bold, Underline;",
+              "Border": ";105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "21": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive1",
+              "ClientRectangle": "0.4,1.8,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "747d4c2c2175b6dc5fbc36ed9168bca6"
+            },
+            "22": {
+              "Ident": "StiHorizontalLinePrimitive",
+              "Name": "HorizontalLinePrimitive1",
+              "ClientRectangle": "0.4,2.4,18,0.0254",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "StartCap": ";;;",
+              "EndCap": ";;;"
+            },
+            "23": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive1",
+              "ClientRectangle": "18.4,4.2,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "747d4c2c2175b6dc5fbc36ed9168bca6"
+            },
+            "24": {
+              "Ident": "StiHorizontalLinePrimitive",
+              "Name": "HorizontalLinePrimitive2",
+              "ClientRectangle": "0.4,3,18,0.0254",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "StartCap": ";;;",
+              "EndCap": ";;;"
+            },
+            "25": {
+              "Ident": "StiHorizontalLinePrimitive",
+              "Name": "HorizontalLinePrimitive3",
+              "ClientRectangle": "0.4,3.6,18,0.0254",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "StartCap": ";;;",
+              "EndCap": ";;;"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiTable",
+          "Name": "Tableroot3",
+          "ClientRectangle": "0,6.2,19,1.6",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell1",
+              "Guid": "8f8e42312d2a4c968417812c93dee4aa",
+              "ClientRectangle": "0,0,2.38,0.8",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "الحالة"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:231,230,230",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression",
+              "ID": 0
+            },
+            "1": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell2",
+              "Guid": "9b416cf6f596e9d181718f7347f16580",
+              "ClientRectangle": "2.39,0,1.75,0.81",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "نسبة الغياب\r\n بعذر"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:231,230,230",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression",
+              "ID": 1
+            },
+            "2": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell3",
+              "Guid": "48adfbeb5903805649675cb456ce86b9",
+              "ClientRectangle": "4.14,0,1.8,0.81",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "نسبة الغياب\r\n بدون عذر"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:231,230,230",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression",
+              "ID": 2
+            },
+            "3": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell4",
+              "Guid": "bbf4cba90e96b05108ab93ee1bef30e4",
+              "ClientRectangle": "5.94,0,1.96,0.81",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "ساعات الغياب\r\n بعذر"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:231,230,230",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression",
+              "ID": 3
+            },
+            "4": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell5",
+              "Guid": "5b5a2c7bd9b0e142389331d5e86b2fbb",
+              "ClientRectangle": "7.9,0,1.98,0.81",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "ساعات الغياب\r\n بدون عذر"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:231,230,230",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression",
+              "ID": 4
+            },
+            "5": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell6",
+              "Guid": "869d1f13b981ff19b23e48b4e0f54c21",
+              "ClientRectangle": "9.88,0,5.97,0.81",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "الاسم"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:231,230,230",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression",
+              "ID": 5
+            },
+            "6": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell7",
+              "Guid": "13a0d632ad2c82c1a448e24bee94d90b",
+              "ClientRectangle": "15.85,0,1.98,0.81",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "رقم القيد"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:231,230,230",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression",
+              "ID": 6
+            },
+            "7": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell8",
+              "Guid": "914a3ab940006799a91d0eb356a52884",
+              "ClientRectangle": "17.83,0,1.17,0.81",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "الرقم"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:231,230,230",
+              "TextBrush": "solid:Black",
+              "Type": "Expression",
+              "ID": 7
+            },
+            "8": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell9",
+              "Guid": "e5b6b2850f3b57172b33ac7ebfd2b048",
+              "ClientRectangle": "0,0.8,2.38,0.8",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root3.status}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "DataColumn",
+              "ID": 8
+            },
+            "9": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell10",
+              "Guid": "c35a127644bc1d4e26e34a29ffcdff6a",
+              "ClientRectangle": "2.39,0.81,1.75,0.79",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root3.per2}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "DataColumn",
+              "ID": 9
+            },
+            "10": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell11",
+              "Guid": "1ef7f1d76d65420f37b4475709ec3278",
+              "ClientRectangle": "4.14,0.81,1.8,0.79",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root3.per1}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "DataColumn",
+              "ID": 10
+            },
+            "11": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell12",
+              "Guid": "9ef0673fdd63b3f1e378774599761a68",
+              "ClientRectangle": "5.94,0.81,1.96,0.79",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root3.att2}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "DataColumn",
+              "ID": 11
+            },
+            "12": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell13",
+              "Guid": "09480e8aee521f8b8b5e18f6023af9be",
+              "ClientRectangle": "7.9,0.81,1.98,0.79",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root3.att1}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "DataColumn",
+              "ID": 12
+            },
+            "13": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell14",
+              "Guid": "942d2a80cb412de9274ccedd7f23cd00",
+              "ClientRectangle": "9.88,0.81,5.97,0.79",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root3.name}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "DataColumn",
+              "ID": 13
+            },
+            "14": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell15",
+              "Guid": "069898a6f6ac87920ed1f0d85a7db3b6",
+              "ClientRectangle": "15.85,0.81,1.98,0.79",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root3.regNo}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "DataColumn",
+              "ID": 14
+            },
+            "15": {
+              "Ident": "StiTableCell",
+              "Name": "Tableroot3_Cell16",
+              "Guid": "188861eeb31d61f510c4084890aff4ef",
+              "ClientRectangle": "17.83,0.81,1.17,0.79",
+              "Restrictions": "AllowMove, AllowSelect, AllowChange",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{root3.id}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Border": "All;105,105,105;;;;;;solid:105,105,105",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn",
+              "ID": 15
+            }
+          },
+          "MinHeight": 0.4,
+          "DataSourceName": "root3",
+          "RowCount": 2,
+          "ColumnCount": 8,
+          "HeaderRowsCount": 1,
+          "NumberID": 16
+        },
+        "2": {
+          "Ident": "StiRectanglePrimitive",
+          "Name": "RectanglePrimitive1",
+          "Guid": "747d4c2c2175b6dc5fbc36ed9168bca6",
+          "ClientRectangle": "0.4,2.2,18,2.4",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          }
+        }
+      },
+      "PageWidth": 21,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}
