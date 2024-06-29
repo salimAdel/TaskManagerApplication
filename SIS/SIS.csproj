@@ -20,8 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\dashboard\Controllers\" />
-    <Folder Include="Areas\dashboard\Views\" />
     <Folder Include="wwwroot\uploads\Excell\" />
   </ItemGroup>
 
@@ -34,6 +32,10 @@
     <None Include="Areas\Admin\Views\User\Update.cshtml" />
     <None Include="Areas\Admin\Views\User\UserPrivilies.cshtml" />
     <None Include="Areas\Admin\Views\User\UserProfile.cshtml" />
+    <None Include="Areas\dashboard\Views\Taskes\Index.cshtml" />
+    <None Include="Areas\dashboard\Views\Taskes\Update.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
     <None Include="wwwroot\assets\app-icons\شعار النهى بني.svg" />
     <None Include="wwwroot\assets\icons\icons.woff2%4029da402db6a4645f2ed69d761c35b60e" />
     <None Include="wwwroot\assets\img\landing\business-consulting\clients\01-dark.svg" />

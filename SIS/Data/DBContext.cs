@@ -33,6 +33,7 @@ namespace SIS.Data
         public DbSet<Privileges> Privileges { get; set; }
         public DbSet<Privileges_RoleBased> Privileges_RoleBased { get; set; }
         public DbSet<Privileges_UserBased> Privileges_UserBased { get; set; }
+        public DbSet<Taske> Taskes { get; set; }
 
 
 
